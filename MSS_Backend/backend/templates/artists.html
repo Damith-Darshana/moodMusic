@@ -1,0 +1,43 @@
+{% load static %}
+
+<head>
+    <style> 
+      
+        
+    </style>
+</head>
+<body>
+   
+    
+    <div class="songs-container">
+        <center> 
+            
+            <div class="album-cover">
+                <img src="{{ artist_data.artist_img }}" id="rotatingImage" alt="" />
+            </div> 
+        </center>
+          <h1 class="pglobal">{{ artist_data.name }}</h1>
+            </br>
+        {% for track in artist_data.topTracks %}
+        
+        <div class="song" data-track-id="{{ track.id }}">
+                <div class="song-img">
+                    <img src="{{ track.cover }}" alt="{{ track.title }}" />
+                    <div class="overlay">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+                <div class="song-title">
+                    <h2 style="text-decoration: none; color: white;">{{ track.title }}</h2>
+                   
+                </div>
+                <span style="text-decoration: none; color: white;">4:33</span> <!-- Replace with actual duration if available -->
+            
+        </div>
+    
+        {% endfor %}
+        
+
+    </div>
+</body>
+

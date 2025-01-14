@@ -1,0 +1,10 @@
+python manage.py load_tracks
+
+env\Scripts\activate.bat 
+python manage.py runserver
+
+python manage.py makemigrations
+
+python manage.py migrate
+
+

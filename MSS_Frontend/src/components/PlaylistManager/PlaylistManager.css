@@ -1,0 +1,284 @@
+.playlist-manager {
+    padding: 2em;
+    /* background-color: #0d024988; */
+    border-radius: 1em;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.playlist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.playlist-input, .playlist-textarea {
+    padding: 0.5em;
+    border: 1px solid #1303418c;
+    border-radius: 0.5em;
+    width: 100%;
+}
+
+.playlist-button {
+    padding: 0.5em 1em;
+    background-color: #1b073a6b;
+    color: rgba(6, 34, 95, 0.61);
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 1em;
+}
+
+.playlist-button:hover {
+    background-color: #3702559f;
+}
+
+.playlist-cancel {
+    padding: 0.5em 1em;
+    background-color: #0a2e5ecc;
+    color: #2c4255;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.playlist-cancel:hover {
+    background-color: #660b0bb2;
+}
+
+.playlist-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.playlist-itemp {
+    padding: 0em;
+    border: 1px solid #1608999f;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    background-color: #b0a8bebb;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    margin-left: 1em;
+    min-width: 15em;
+}
+
+.playlist-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.playlist-description {
+    color: #666;
+}
+
+.playlist-image {
+    border-radius: 0.5em;
+    min-width: 8em;
+    min-height: 7em;
+}
+
+.playlist-edit-button, .playlist-delete-button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.playlist-edit-button {
+    background-color: #022153bd;
+    color: rgba(255, 255, 255, 0.849);
+    min-width: 4.5em;
+}
+
+.playlist-edit-button:hover {
+    background-color: #196ac7b9;
+}
+
+.playlist-delete-button {
+    background-color: #022153bd;
+    color: rgba(228, 228, 228, 0.904);
+    min-width: 4.5em;
+}
+
+.playlist-delete-button:hover {
+    background-color: #961923cc;
+}
+
+
+
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it is above other content */
+}
+
+.modal-content {
+    /* background-color: rgba(105, 102, 122, 0.719); */
+    background: linear-gradient(150deg, 
+    #3d0e73, 
+    #541c8c, 
+    #6a2295, 
+    #922eb0, 
+    #a84db6, 
+    #fa66e6
+);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    min-width: 5em;
+}
+
+.playlist-manager {
+    padding: 20px; /* Adjust as needed */
+}
+
+.playlist-list {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.playlist-itemp {
+    margin-bottom: 20px;
+    width: 15em;
+    padding: 10px;
+    border: 1px solid #0536637e;
+    border-radius: 5px;
+    
+}
+
+.playlist-button {
+    background-color: #21af14;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.playlist-cancel {
+    background-color: #a81010;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.playlist-input,
+.playlist-textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.playlist-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.playlist-textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+
+
+
+
+
+
+
+
+
+
+.selected-tracks {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Ensure the tracks are stacked vertically */
+    width: 100%;
+    max-height: 100px; /* Limit the height */
+    overflow-y: auto; /* Enable vertical scroll if the content exceeds max height */
+    padding: 1em;
+    border-radius: 1em;
+    backdrop-filter: blur(20px);
+    background: rgba(133, 45, 145, 0.2); /* Darker purple gradient, adjust if needed */
+    box-shadow: rgba(6, 14, 75, 0.5) 0px 7px 29px 0px; /* Similar shadow to search container */
+    z-index: 1;
+    border: 1px solid rgba(25, 71, 131, 0.7); /* Optional border to match your style */
+  }
+  
+  .selected-track-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure the button is on the far right */
+    gap: 1em;
+    padding: 0.5em;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    border-bottom: 1px solid #ddd; /* Optional: Add a divider between items */
+  }
+  
+  /* Hover effect */
+  .selected-track-item:hover {
+    background-color: #0e1a41; /* Dark blue background on hover */
+    color: white; /* Change text color to white on hover */
+    border-radius: 1em;
+  }
+  
+  .resultcontainer ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resultcontainer li {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    cursor: pointer;
+  }
+  
+  .resultcontainer img {
+    width: 2.4em;
+    height: 2.4em;
+    border-radius: 50%;
+  }
+  
+  .overflowing-text {
+    display: block;
+    font-size: 1em;
+    color: var(--color-text-light);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+  
+  .selected-track-item button {
+    background-color: #cc190cd8; /* Red button for remove */
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .selected-track-item button:hover {
+    background-color: #da1313be; /* Darker red on hover */
+  }
+  

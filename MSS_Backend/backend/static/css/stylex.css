@@ -1,0 +1,397 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(80deg, rgb(36, 6, 39),
+            rgb(2, 1, 2), rgb(147, 59, 247));
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif';
+
+}
+.containerx {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+    
+}
+
+#up {
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    background: linear-gradient(217deg,rgba(250, 45, 216, 0.5), rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg, rgba(250, 45, 216, 0.5), rgba(0,255,0,0) 70.71%),
+            linear-gradient(336deg,rgba(250, 45, 216, 0.5), rgba(0,0,255,0) 70.71%);
+    filter: blur(80px);
+    animation: down 15s infinite;
+}
+
+#down {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(10deg, rgba(250, 45, 216, 0.5),
+            rgb(2, 1, 2), rgb(99, 84, 233));
+    filter: blur(80px);
+    animation: up 30s infinite;
+}
+
+#left {
+    position: absolute;
+    height: 800px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(10deg, rgba(250, 45, 216, 0.5),
+    rgb(2, 1, 2), rgb(99, 84, 233));
+    filter: blur(80px);
+    animation: left 45s infinite;
+}
+
+#right {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background-image: linear-gradient(10deg, rgba(250, 45, 216, 0.5),
+    rgb(2, 1, 2), rgb(99, 84, 233));
+    filter: blur(80px);
+    animation: right 40s infinite;
+}
+
+@keyframes down {
+
+    0%,
+    100% {
+        top: -100px;
+    }
+
+    70% {
+        top: 700px;
+    }
+}
+
+@keyframes up {
+
+    0%,
+    100% {
+        bottom: -100px;
+    }
+
+    70% {
+        bottom: 700px;
+    }
+}
+
+@keyframes left {
+
+    0%,
+    100% {
+        left: -100px;
+    }
+
+    70% {
+        left: 1300px;
+    }
+}
+
+@keyframes right {
+
+    0%,
+    100% {
+        right: -100px;
+    }
+
+    70% {
+        right: 1300px;
+    }
+} */
+
+
+
+
+
+
+
+
+
+/* @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(135deg, #5b19f3, #010814, #9543f3, #1a2fee);
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.containerx {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.74);
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(214, 33, 33, 0.3);
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(248, 46, 46, 0.2);
+}
+
+#up {
+    position: absolute;
+    height: 800px;
+    width: 800px;
+    border-radius: 50%;
+    background: 
+        linear-gradient(210deg, rgba(10, 209, 116, 0.5), rgba(116, 21, 21, 0) 70.71%),
+        linear-gradient(330deg, rgba(0, 255, 213, 0.5), rgba(94, 190, 38, 0) 70.71%),
+        linear-gradient(90deg, rgba(19, 200, 255, 0.5), rgba(85, 100, 38, 0) 70.71%);
+    filter: blur(80px);
+    animation: down 8s infinite;
+}
+
+#down {
+    position: absolute;
+    right: 0;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: linear-gradient(10deg, rgba(0, 0, 255, 0.5), rgba(75, 0, 130, 0.5), rgba(17, 230, 212, 0.3));
+    filter: blur(80px);
+    animation: up 16s infinite;
+}
+
+#left {
+    position: absolute;
+    height: 800px;
+    width: 500px;
+    border-radius: 50%;
+    background: linear-gradient(10deg, rgba(14, 224, 6, 0.5), rgba(7, 7, 31, 0.5), rgba(119, 51, 230, 0.3));
+    filter: blur(80px);
+    animation: left 20s infinite;
+}
+
+#right {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    background: linear-gradient(10deg, rgba(2, 2, 197, 0.5), rgba(0, 0, 255, 0.5), rgba(116, 0, 199, 0.3));
+    filter: blur(80px);
+    animation: right 25s infinite;
+}
+
+@keyframes down {
+
+    0%,
+    100% {
+        top: -100px;
+    }
+
+    70% {
+        top: 700px;
+    }
+}
+
+@keyframes up {
+
+    0%,
+    100% {
+        bottom: -100px;
+    }
+
+    70% {
+        bottom: 700px;
+    }
+}
+
+@keyframes left {
+
+    0%,
+    100% {
+        left: -100px;
+    }
+
+    70% {
+        left: 1300px;
+    }
+}
+
+@keyframes right {
+
+    0%,
+    100% {
+        right: -100px;
+    }
+
+    70% {
+        right: 1300px;
+    }
+} */
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #5b19f3, #010814, #9543f3, #1a2fee);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+.containerx {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+#up, #down, #left, #right {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation-timing-function: ease-in-out;
+}
+
+#up {
+    height: 800px;
+    width: 800px;
+    background: radial-gradient(circle, rgba(10, 209, 116, 0.5), transparent 70.71%);
+    animation: down 10s infinite;
+}
+
+#down {
+    right: 0;
+    height: 500px;
+    width: 500px;
+    background: radial-gradient(circle, rgba(0, 0, 255, 0.5), rgba(75, 0, 130, 0.5), rgba(17, 230, 212, 0.3));
+    animation: up 14s infinite;
+}
+
+#left {
+    height: 800px;
+    width: 500px;
+    background: radial-gradient(circle, rgba(14, 224, 6, 0.5), rgba(7, 7, 31, 0.5), rgba(119, 51, 230, 0.3));
+    animation: left 18s infinite;
+}
+
+#right {
+    height: 500px;
+    width: 500px;
+    background: radial-gradient(circle, rgba(2, 2, 197, 0.5), rgba(0, 0, 255, 0.5), rgba(116, 0, 199, 0.3));
+    animation: right 20s infinite;
+}
+
+
+@keyframes down {
+    0%, 100% { top: -100px; }
+    70% { top: 700px; }
+}
+
+@keyframes up {
+    0%, 100% { bottom: -100px; }
+    70% { bottom: 700px; }
+}
+
+@keyframes left {
+    0%, 100% { left: -100px; }
+    70% { left: 1300px; }
+}
+
+@keyframes right {
+    0%, 100% { right: -100px; }
+    70% { right: 1300px; }
+}
+
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png'); 
+    opacity: 0.1;
+    z-index: 0;
+} 
+
+
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}

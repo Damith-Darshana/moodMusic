@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>mojo</title>
+  <link rel='stylesheet'href="{% static 'css/all.min.css' %}" >
+<link rel='stylesheet' href="{% static 'css/swiper-bundle.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<script src= "{% static 'js/jquery.min.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'css/stylex.css' %}">
+
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<body>
+  <header class="header">
+    <div class="header_container containerx">
+      <section id="up"></section>
+      <section id="down"></section>
+      <section id="left"></section>
+      <section id="right"></section>
+
+    </div>
+  </header>
+
+    <main>
+      <nav class="main-menu">
+        <div>
+          <div class="user-info">
+            <img
+            src="{% static 'img/avatar.jpg' %}" />
+            <p>{{user.username}}</p>
+          </div>
+          <ul>
+            <li class="nav-item active">
+              <a href="{% url 'discover' %}">
+                <i class="fas fa-home"></i>
+                <span class="nav-text">Discover</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'trending' %}">
+                <i class="fa fa-line-chart"></i>
+                <span class="nav-text">Trending</span>
+              </a>
+            </li>
+
+             <li class="nav-item">
+              <a href="{% url 'recommend' %}">
+                <i class="fas fa-compass"></i>
+                <span class="nav-text">Album</span>
+              </a>
+            </li> 
+
+             {% comment %} <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-circle-play nav-icon"></i>
+                <span class="nav-text">Playlist</span>
+              </a>
+            </li>  {% endcomment %}
+
+            <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-heart nav-icon"></i>
+                <span class="nav-text">Favorites</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'search' %}">
+                <i class="fa fa-search nav-icon"></i>
+                <span class="nav-text">Search</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul>
+          <li class="nav-item">
+            <a href="#">
+              <i class="fa fa-user nav-icon"></i>
+              <span class="nav-text">Profile</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#">
+              <i class="fa fa-gear nav-icon"></i>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/logout">
+              <i class="fa fa-right-from-bracket nav-icon"></i>
+              <span class="nav-text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+   
+    </main>
+
+
+
+
+  </body>
+<!-- partial -->
+  <script src="{% static 'js/swiper-bundle.min.js' %}" ></script><script  src="{% static 'js/script1.js' %}"></script>
+</body>
+</html>

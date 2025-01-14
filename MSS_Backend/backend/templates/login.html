@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MSS-Login</title>
+  {% comment %} <link rel="stylesheet" href="./style.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/stylelog.css' %}">
+  <link rel="stylesheet" href="{% static 'css/stylex.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="login">
+  {% comment %} <header class="header">
+    <div class="header_container containerx">
+      <section id="up"></section>
+      <section id="down"></section>
+      <section id="left"></section>
+      <section id="right"></section>
+
+    </div>
+  </header> {% endcomment %}
+       {% comment %} <img
+        src="https://images.unsplash.com/photo-1620121692029-d088224ddc74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80"
+        alt="Background Image"
+        class="login__bg"
+      />  {% endcomment %}
+
+      <img
+        src=" https://cdn.bannerchest.com/bannerchest/94517e47-4d77-4021-9b13-faf3bbf5a4bc-light-pink-wallpaper.webp "
+        alt="Background Image"
+        class="login__bg"
+      />
+
+      <form action="" class="login__form" method="POST">
+        {% csrf_token %}
+        <h1 class="login__title">Log in</h1>
+
+        <div class="login__inputs">
+          <div class="login__box">
+            <input
+              type="text"
+              class="login__input"
+              placeholder="Username"
+              name ="username"
+              required
+            />
+            <i class="ri-mail-fill"></i>
+          </div>
+
+          <div class="login__box">
+            <input
+              type="password"
+              class="login__input"
+              placeholder="Password"
+              name ="password"
+              required
+            />
+            <i class="ri-lock-2-fill"></i>
+          </div>
+        </div>
+
+        <div class="login__check">
+          {% comment %} <div class="login__check-box">
+            <input type="checkbox" class="login__check-input" id="user-check" />
+            <label for="user-check" class="login__check-label"
+              >Remember me</label
+            >
+          </div> {% endcomment %}
+
+          {% comment %} <a href="#" class="login__forgot">Forgot Password?</a> {% endcomment %}
+        </div>
+
+        <button class="login__button" type="submit">Log in</button>
+        <div class="login__register">
+          Don't have an account?
+          <a href="#">Register</a>
+        </div>
+      </form>
+    </div>
+<!-- partial -->
+  
+</body>
+</html>

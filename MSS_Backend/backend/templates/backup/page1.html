@@ -1,0 +1,59 @@
+<form action="search" method="POST">
+    {% csrf_token %}
+    <div class="search-bar" style="width: 390px;">
+        <input type="search" name="search_query" placeholder="What do you want to listen to?" aria-label="Search">
+        <button type="submit" aria-label="Search"></button>
+    </div>
+</form>
+
+
+<div class="search-content1">
+  <div class="songs-container"></br></br>
+    <div class="scrollableSearch-container">
+      <h4 >{{search_results_count}} Songs Found</h4></br>
+      <div class="results-flex">
+  {% for track in track_list %}
+          <a href="/music/{{track.trackid}}" style="text-decoration: none; color: white;"> 
+          <div class="song" data-track-id="{{ track.track_id }}">
+    
+          <div class="song-img">
+              <img src="{{ track.cover }}" alt="{{track.track_name}}" />
+              <div class="overlay">
+                  <i class="fa-solid fa-play"></i>
+              </div>
+          </div>
+          <div class="song-title">
+              <h2>{{track.track_name}}</h2>
+              <p>{{ track.artist_name }}</p>
+          </div>
+          {% comment %} <span>4:33</span>  {% endcomment %}
+      
+  </div></a>
+  {% endfor %}
+</div></div> </div>
+
+
+<div class="search-content2">
+  <div class="songs-container"></br></br>
+   <div class="scrollableSearch-container">
+     <h4 >{{search_results_count}} Artists Found</h4></br>
+     <div class="results-flex">
+ {% for track in track_list %}
+         <a href="/music/{{track.trackid}}" style="text-decoration: none; color: white;"> 
+         <div class="song" data-track-id="{{ track.track_id }}">
+   
+         <div class="song-img">
+             <img src="{{ track.cover }}" alt="{{track.track_name}}" />
+             <div class="overlay">
+                 <i class="fa-solid fa-play"></i>
+             </div>
+         </div>
+         <div class="song-title">
+             <h2>{{track.track_name}}</h2>
+             <p>{{ track.artist_name }}</p>
+         </div>
+         
+     
+ </div></a>
+ {% endfor %}
+ </div></div></div></div>

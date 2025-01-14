@@ -1,0 +1,484 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>mojo</title>
+  <link rel='stylesheet'href="{% static 'css/all.min.css' %}" >
+<link rel='stylesheet' href="{% static 'css/swiper-bundle.min.css' %}"><link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<script src= "{% static 'js/jquery.min.js' %}"></script>
+
+{% comment %} <link rel="stylesheet" href="{% static 'css/stylex.css' %}"> {% endcomment %}
+
+</head>
+<body>
+  
+  {% comment %} <header class="header">
+    <div class="header_container containerx">
+      <section id="up"></section>
+      <section id="down"></section>
+      <section id="left"></section>
+      <section id="right"></section>
+
+    </div>
+  </header> {% endcomment %}
+
+<!-- partial:index.partial.html -->
+<body>
+    <main>
+      <nav class="main-menu">
+        <div>
+          <div class="user-info">
+            <img
+            src="{% static 'img/avatar.jpg' %}" />
+            <p>{{user.username}}</p>
+          </div>
+          <ul>
+            <li class="nav-item active">
+              <a href="{% url 'discover' %}">
+                <i class="fas fa-home"></i>
+                <span class="nav-text">Discover</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a href="{% url 'trending' %}">
+                <i class="fa fa-line-chart"></i>
+                <span class="nav-text">Trending</span>
+              </a>
+            </li>
+
+             <li class="nav-item">
+              <a href="#">
+                <i class="fas fa-compass"></i>
+                <span class="nav-text">Album</span>
+              </a>
+            </li> 
+
+             {% comment %} <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-circle-play nav-icon"></i>
+                <span class="nav-text">Playlist</span>
+              </a>
+            </li>  {% endcomment %}
+
+            <li class="nav-item">
+              <a href="#">
+                <i class="fa fa-heart nav-icon"></i>
+                <span class="nav-text">Favorites</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'search' %}">
+                <i class="fa fa-search nav-icon"></i>
+                <span class="nav-text">Search</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <ul>
+          <li class="nav-item">
+            <a href="#">
+              <i class="fa fa-user nav-icon"></i>
+              <span class="nav-text">Profile</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#">
+              <i class="fa fa-gear nav-icon"></i>
+              <span class="nav-text">Settings</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/logout">
+              <i class="fa fa-right-from-bracket nav-icon"></i>
+              <span class="nav-text">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="content">
+        <div class="left-content">
+          <div class="slider-container">
+            <h1>Popular Playlist</h1>
+            <div class="swiper">
+              <div class="swiper-wrapper">
+
+
+
+                {% for pln in playlistdatail %}
+                    <div class="swiper-slide">                   
+                    <img 
+                    src="{% static 'img/a' %}{{ pln.id }}.jpg" />
+                    <div class="slide-overlay">
+                    <h2>{{ pln.name }}</h2>
+
+                    <button id="load-playlist" class="listen-now-btn" data-track-id="{{ pln.id }}">
+                    Listen Now <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    </div>
+                    </div>{% endfor %} 
+
+
+
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+           {% comment %} <div class="artists">
+            <h1>Featured Artists</h1>
+            <div class="artist-container containers">
+              {% for artist in artists_info %}
+              <div class="artist">
+                <a href="/profile/{{artist.1}}" style="text-decoration: none;">
+                <img
+                  src="{{artist.2}}"
+                  alt="{{artist.0}}" /></a>
+                <p>{{artist.0}}</p>
+              </div>
+              
+              {% endfor %}
+
+            </div>
+          </div>  
+
+          {% comment %} <div class="albums">
+            <h1>Recommended Albums</h1>
+            <div class="album-container containers">
+
+              <div class="album">
+                <div class="album-frame">
+                  <img
+                    src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/74c4f0f9-d73e-4737-83fa-ea4afe392229"
+                    alt="" />
+                </div>
+                <div>
+                  <h2>Views</h2>
+                  <p>Drake</p>
+                </div>
+              </div> {% endcomment %}
+
+            </div>
+          </div>
+        </div>
+       
+        <div class="right-content">
+                    
+                  <div> 
+                    <div class="music-player">
+                          <div class="album-cover">
+                            <img src="{{track_image}}" id="rotatingImage" alt="" />
+                            <span class="point"></span>
+                          </div>
+
+                          <h2 id="track-name">{{track_name}}</h2>
+                          <p  id="artist-name">{{artist_name}}</p>
+
+                          <audio id="song">
+                            <source id="audio-player" src="{{audio_url}}" type="audio/mpeg" />
+                          </audio>
+
+                          <input type="range" value="0" id="progress" />
+
+                          <div class="controls">
+                            <button class="backward">
+                              <i class="fa-solid fa-backward"></i>
+                            </button>
+                            <button class="play-pause-btn" id="play-pause">
+                              <i class="fa-solid fa-play" id="controlIcon"></i>
+                            </button>
+                            <button class="forward">
+                              <i class="fa-solid fa-forward"></i>
+                            </button>
+                          </div>
+                    </div>
+                  </div> 
+                </br>
+                  <div class="recommended-songs">
+                    
+                      <div class="swiper-wrapper" id="playlist-container"> </div>
+                  <div class="song-container">
+                      <div id="single-track-container" class="scrollable-container"></div>
+                  </div>
+                </div> 
+    </div>
+                    
+                      
+      </section>
+    </main>
+  </body>
+<!-- partial -->
+  <script src="{% static 'js/swiper-bundle.min.js' %}" ></script><script  src="{% static 'js/script1.js' %}"></script>
+
+{% comment %} 
+  <script>
+    $(document).ready(function() {
+        $('#discover-link').click(function(e) {
+            e.preventDefault();
+            $('#main-content').load('/page1', function() {
+                // Optional: Call initialize function if needed
+                initializePage1();
+            });
+        });
+    });
+    </script> {% endcomment %}
+    
+  
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const playPauseButton = document.getElementById('play-pause');
+      const controlIcon = document.getElementById('controlIcon');
+      const song = document.getElementById('song');
+      const progressBar = document.getElementById('progress');
+      const audioPlayer = document.getElementById('audio-player');
+      const trackName = document.getElementById('track-name');
+      const artistName = document.getElementById('artist-name');
+      const rotatingImage = document.getElementById('rotatingImage');
+      const loadPlaylistButton = document.getElementById('load-playlist');
+      const forwardButton = document.querySelector('.forward');
+      const backwardButton = document.querySelector('.backward');
+
+      if (!rotatingImage.src.trim()) {
+        rotatingImage.src = ''; 
+        albumCover.style.display = 'none';
+      }
+  
+      let currentIndex = 0;
+      let isPlaying = false;
+      let songs = []; // Array to hold all song elements
+  
+      // Function to initialize player for a track
+      const initializePlayer = (trackId) => {
+        fetch(`/music/${trackId}/`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log('Received data:', data);
+  
+            if (!data.error) {
+              audioPlayer.src = data.audio_url;
+              rotatingImage.src = data.track_image;
+              trackName.textContent = data.track_name;
+              artistName.textContent = data.artist_name;
+  
+              song.load();
+              song.play();
+              controlIcon.classList.remove('fa-play');
+              controlIcon.classList.add('fa-pause');
+              isPlaying = true;
+              console.log('Song loaded and played.');
+            } else {
+              console.error('Error:', data.error);
+            }
+          })
+          .catch(error => console.error('Fetch error:', error));
+      };
+  
+      // Event delegation for dynamically loaded songs
+      document.body.addEventListener('click', (event) => {
+        if (event.target.closest('.song')) {
+          event.preventDefault(); // Prevent default link behavior
+  
+          const songElement = event.target.closest('.song');
+          const trackId = songElement.getAttribute('data-track-id');
+          console.log('Song clicked. Track ID:', trackId);
+  
+          if (trackId) {
+            currentIndex = Array.from(songs).indexOf(songElement);
+            initializePlayer(trackId);
+          } else {
+            console.error('Track ID is null or undefined');
+          }
+        }
+      });
+  
+      // Function to play next track in sequence
+      const playNextTrack = () => {
+        if (songs.length === 0) {
+          console.error('No songs available to play.');
+          return;
+        }
+  
+        if (currentIndex < songs.length - 1) {
+          currentIndex++;
+        } else {
+          console.log('End of playlist. Resetting to first track.');
+          currentIndex = 0; // Reset index for loop play
+        }
+  
+        const nextSong = songs[currentIndex];
+        if (nextSong) {
+          const trackId = nextSong.getAttribute('data-track-id');
+          console.log(`Playing next track with ID: ${trackId} at index ${currentIndex}`);
+          initializePlayer(trackId);
+        } else {
+          console.error('Next song element is undefined.');
+        }
+      };
+  
+      // Function to play previous track in sequence
+      const playPreviousTrack = () => {
+        if (songs.length === 0) {
+          console.error('No songs available to play.');
+          return;
+        }
+  
+        if (currentIndex > 0) {
+          currentIndex--;
+        } else {
+          console.log('Start of playlist. Setting to last track.');
+          currentIndex = songs.length - 1; // Set index to last track for loop play
+        }
+  
+        const previousSong = songs[currentIndex];
+        if (previousSong) {
+          const trackId = previousSong.getAttribute('data-track-id');
+          console.log(`Playing previous track with ID: ${trackId} at index ${currentIndex}`);
+          initializePlayer(trackId);
+        } else {
+          console.error('Previous song element is undefined.');
+        }
+      };
+  
+      // Fetch all song elements and prepare for autoplay
+      const updateSongs = () => {
+        const songsContainer = document.querySelector('.songs-container');
+        if (songsContainer) {
+          songs = songsContainer.querySelectorAll('.song');
+          console.log(`Found ${songs.length} songs in container.`);
+        } else {
+          console.error('Songs container not found.');
+        }
+      };
+  
+      // Event listener for play/pause button
+      playPauseButton.addEventListener('click', () => {
+        if (isPlaying) {
+          song.pause();
+          controlIcon.classList.remove('fa-pause');
+          controlIcon.classList.add('fa-play');
+          isPlaying = false;
+          console.log('Song paused.');
+        } else {
+          song.play();
+          controlIcon.classList.remove('fa-play');
+          controlIcon.classList.add('fa-pause');
+          isPlaying = true;
+          console.log('Song played.');
+        }
+      });
+  
+      // Update progress bar as audio plays
+      song.addEventListener('timeupdate', () => {
+        const currentTime = song.currentTime;
+        const duration = song.duration;
+        const progress = (currentTime / duration) * 100;
+        progressBar.value = progress;
+      });
+  
+      // Handle seeking in the progress bar
+      progressBar.addEventListener('input', () => {
+        const seekTime = progressBar.value * song.duration / 100;
+        song.currentTime = seekTime;
+      });
+  
+      // Event listener for ended event to play next track
+      song.addEventListener('ended', () => {
+        console.log('Song ended. Playing next track...');
+        playNextTrack();
+      });
+  
+      // Event listener for forward button
+      forwardButton.addEventListener('click', () => {
+        playNextTrack();
+      });
+  
+      // Event listener for backward button
+      backwardButton.addEventListener('click', () => {
+        playPreviousTrack();
+      });
+  
+      $(document).ready(function () {
+        console.log("Document is ready");
+    
+        $('.listen-now-btn').click(function (e) {
+            console.log("Listen now button clicked");
+            e.preventDefault(); // Prevent default form submission
+            
+            var trackId = $(this).data('track-id');
+            console.log("Track ID:", trackId);
+    
+            $.ajax({
+                url: '/pll/' + trackId, // Replace with your URL
+                type: 'GET',
+                beforeSend: function () {
+                    console.log("Sending AJAX request to:", '/pll/' + trackId);
+                },
+                success: function (data) {
+                    console.log("AJAX request successful");
+                    console.log("Received data:", data);
+    
+                    $('#single-track-container').html(data); // Update the container with returned HTML
+                    console.log("Updated #single-track-container with new data");
+    
+                    updateSongs();
+                    console.log("updateSongs() called");
+    
+                    // Play the first song in the updated playlist
+                    if (songs.length > 0) {
+                        const firstTrackId = songs[0].getAttribute('data-track-id');
+                        console.log("First track ID in updated playlist:", firstTrackId);
+    
+                        currentIndex = 0; // Reset index to the first song
+                        initializePlayer(firstTrackId);
+                        console.log("initializePlayer() called for the first track");
+                    } else {
+                        console.warn("No songs found in the updated playlist");
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('AJAX request error:', error);
+                    console.error('Status:', status);
+                    console.error('XHR:', xhr);
+                },
+                complete: function () {
+                    console.log("AJAX request completed");
+                }
+            });
+        });
+    
+        console.log("Event listener for listen-now-btn is set up");
+    });
+    
+      // Initial songs update
+      updateSongs();
+    });
+  </script>
+  
+    
+
+
+  
+  
+
+  
+  
+
+
+
+
+</body>
+</html>

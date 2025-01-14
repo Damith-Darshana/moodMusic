@@ -1,0 +1,35 @@
+{% load static %}
+
+<head>
+    <style> 
+   
+    </style>
+</head>
+<body>
+   
+    <h1 class="pglobal">{{ playlist_details.playlist_name }}</h1>
+    <p class="pglobal">{{ playlist_details.playlist_description }}</p>
+
+    <div class="songs-container">
+        {% for track in playlist_details.tracks %}
+        
+        <div class="song" data-track-id="{{ track.track_id }}">
+          {% comment %} <a href="#" style="text-decoration: none; color: white;"> {% endcomment %}
+                <div class="song-img">
+                    <img src="{{ track.cover_url }}" alt="{{ track.track_title }}" />
+                    <div class="overlay">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                </div>
+                <div class="song-title">
+                    <h2 style="text-decoration: none; color: white;">{{ track.track_title }}</h2>
+                    <p style="text-decoration: none; color: white;">{{ track.artist_name }}</p>
+                </div>
+                <span style="text-decoration: none; color: white;">4:33</span> <!-- Replace with actual duration if available -->
+            
+        </div>
+    
+        {% endfor %}
+    </div>
+</body>
+
